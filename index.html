@@ -293,29 +293,40 @@
     </footer>
   </div>
 
-  <script>
-    const certImages = [
-      { file: 'CCNA1.JPG', label: 'CCNA Certificate 1' },
-      { file: 'CCNA2.JPG', label: 'CCNA Certificate 2' },
-      { file: 'HCIA.PNG', label: 'HCIA Certificate' },
-      { file: 'IMG_20250721_095356_273.jpg', label: 'Certificate Photo 1' },
-      { file: 'IMG_20250806_071940_193.jpg', label: 'Certificate Photo 2' },
-      { file: 'Recommendation.JPG', label: 'Recommendation Certificate' }
-    ];
+<script>
+const certImages = [
+  { file: 'CCNA1.JPG', web: 'CCNA1.webp', label: 'CCNA Certificate 1' },
+  { file: 'CCNA2.JPG', web: 'CCNA2.webp', label: 'CCNA Certificate 2' },
+  { file: 'HCIA.PNG', web: 'HCIA.webp', label: 'HCIA Certificate' },
+  { file: 'IMG_20250721_095356_273.jpg', web: 'IMG_20250721_095356_273.webp', label: 'Certificate Photo 1' },
+  { file: 'IMG_20250806_071940_193.jpg', web: 'IMG_20250806_071940_193.webp', label: 'Certificate Photo 2' },
+  { file: 'Recommendation.JPG', web: 'Recommendation.webp', label: 'Recommendation Certificate' }
+];
 
-    const list = document.getElementById('certList');
-    certImages.forEach(cert => {
-      const item = document.createElement('article');
-      item.className = 'cert-item';
-      item.innerHTML = `
-        <div class="media">
-          <img src="static/${cert.file}" alt="${cert.label}">
-          <div class="overlay">${cert.label}</div>
-        </div>
-        <div class="caption">${cert.label}</div>
-      `;
-      list.appendChild(item);
-    });
-  </script>
+const list = document.getElementById('certList');
+
+certImages.forEach(cert => {
+  const item = document.createElement('article');
+  item.className = 'cert-item';
+  item.innerHTML = `
+    <div class="media">
+      <picture>
+        <source srcset="static/${cert.web}" type="image/webp">
+        <img 
+          src="static/${cert.file}" 
+          alt="${cert.label}" 
+          loading="lazy"
+          srcset="static/${cert.web} 1200w, static/${cert.web} 600w"
+          sizes="(max-width: 600px) 90vw, 50vw"
+        >
+      </picture>
+      <div class="overlay">${cert.label}</div>
+    </div>
+    <div class="caption">${cert.label}</div>
+  `;
+  list.appendChild(item);
+});
+</script>
+
 </body>
 </html>
