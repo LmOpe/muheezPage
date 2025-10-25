@@ -297,13 +297,13 @@
 
 <script>
 const certImages = [
-  { file: 'CCNA1.JPG', web: 'CCNA1.webp', label: 'CCNA Certificate 1' },
-  { file: 'CCNA2.JPG', web: 'CCNA2.webp', label: 'CCNA Certificate 2' },
+  { file: 'CCNA1.png', web: 'CCNA1.webp', label: 'CCNA Certificate 1' },
+  { file: 'CCNA2.png', web: 'CCNA2.webp', label: 'CCNA Certificate 2' },
   { file: 'HCIA.PNG', web: 'HCIA.webp', label: 'HCIA Certificate' },
-  { file: 'IMG_20250721_095356_273.jpg', web: 'IMG_20250721_095356_273.webp', label: 'Certificate Photo 1' },
-  { file: 'IMG_20250806_071940_193.jpg', web: 'IMG_20250806_071940_193.webp', label: 'Certificate Photo 2' },
-  { file: 'U-INSPIRE-CERT.jpg', web: 'U-INSPIRE-CERT.webp', label: 'U-INSPIRE Certificate' },
-  { file: 'Recommendation.JPG', web: 'Recommendation.webp', label: 'Recommendation Certificate' }
+  { file: 'IMG_20250721_095356_273.png', web: 'IMG_20250721_095356_273.webp', label: 'Certificate Photo 1' },
+  { file: 'IMG_20250806_071940_193.png', web: 'IMG_20250806_071940_193.webp', label: 'Certificate Photo 2' },
+  { file: 'U-INSPIRE-CERT.png', web: 'U-INSPIRE-CERT.webp', label: 'U-INSPIRE Certificate' },
+  { file: 'Recommendation.png', web: 'Recommendation.webp', label: 'Recommendation Certificate' }
 ];
 
 const list = document.getElementById('certList');
@@ -314,12 +314,12 @@ certImages.forEach(cert => {
   item.innerHTML = `
     <div class="media">
       <picture>
-        <source srcset="static/${cert.web}" type="image/webp">
+        <source srcset="static/images/${cert.web}" type="image/webp">
         <img 
-          src="static/${cert.file}" 
+          src="static/images/${cert.file}" 
           alt="${cert.label}" 
           loading="lazy"
-          srcset="static/${cert.web} 1200w, static/${cert.web} 600w"
+          srcset="static/images/${cert.web} 1200w, static/images/${cert.web} 600w"
           sizes="(max-width: 600px) 90vw, 50vw"
         >
       </picture>
