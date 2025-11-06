@@ -1,317 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Certificates Showcase — Yunus Muheez</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certificates Showcase — Yunus Muheez</title>
 
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root{
-      --main: #06005c;
-      --main-dark: #030033;
-      --main-light: #3c37a6;
-      --bg: #f6f6ff;
-      --card-bg: #ffffff;
-      --muted: #52525b;
-    }
+    <style>
+      :root {
+        --main: #06005c;
+        --main-dark: #030033;
+        --main-light: #3c37a6;
+        --bg: #f6f6ff;
+        --card-bg: #ffffff;
+        --muted: #52525b;
+      }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background:var(--bg);
-      color:#0b1220;
-      line-height:1.4;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: #0b1220;
+        line-height: 1.4;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-    .page{
-      max-width:1100px;
-      margin:28px auto;
-      padding:20px;
-    }
+      .page {
+        max-width: 1100px;
+        margin: 28px auto;
+        padding: 20px;
+      }
 
-    /* header */
-    header.site-header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:18px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      flex:1;
-    }
-    .logo{
-      width:44px;
-      height:44px;
-      border-radius:10px;
-      display:inline-grid;
-      place-items:center;
-      color:#fff;
-      font-weight:700;
-      background:linear-gradient(135deg,var(--main),var(--main-light));
-      box-shadow:0 6px 18px rgba(6,0,92,0.18);
-    }
-    .brand h4{
-      margin:0;
-      font-size:1.05rem;
-      color:var(--main);
-      letter-spacing:0.2px;
-    }
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-weight:600;
-      padding:8px 10px;
-      border-radius:8px;
-    }
-    nav a:hover{
-      background:rgba(6,0,92,0.06);
-      color:var(--main);
-    }
+      /* header */
+      header.site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: inline-grid;
+        place-items: center;
+        color: #fff;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--main), var(--main-light));
+        box-shadow: 0 6px 18px rgba(6, 0, 92, 0.18);
+      }
+      .brand h4 {
+        margin: 0;
+        font-size: 1.05rem;
+        color: var(--main);
+        letter-spacing: 0.2px;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 10px;
+        border-radius: 8px;
+      }
+      nav a:hover {
+        background: rgba(6, 0, 92, 0.06);
+        color: var(--main);
+      }
 
-    /* mobile: hide nav, brand spans across */
-    @media(max-width:768px){
-      nav{display:none}
-      header.site-header{justify-content:center}
-      .brand{justify-content:center}
-    }
+      /* mobile: hide nav, brand spans across */
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+        }
+        header.site-header {
+          justify-content: center;
+        }
+        .brand {
+          justify-content: center;
+        }
+      }
 
-    /* hero */
-    .hero{
-      background:linear-gradient(180deg,rgba(6,0,92,0.06),rgba(60,55,166,0.02));
-      border-radius:14px;
-      padding:34px 22px;
-      text-align:center;
-      box-shadow:0 8px 30px rgba(6,0,92,0.06);
-      margin-bottom:26px;
-    }
-    .hero .name{
-      font-size:clamp(1.5rem,4.5vw,2.4rem);
-      margin:0 0 6px;
-      color:var(--main-dark);
-      font-weight:700;
-      letter-spacing:-0.4px;
-    }
-    .hero h2{
-      margin:6px 0 8px;
-      font-size:clamp(1.35rem,3.2vw,1.9rem);
-      color:var(--main);
-      font-weight:700;
-    }
-    .hero p{
-      margin:0;
-      color:var(--muted);
-      font-size:1rem;
-      max-width:820px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+      /* hero */
+      .hero {
+        background: linear-gradient(
+          180deg,
+          rgba(6, 0, 92, 0.06),
+          rgba(60, 55, 166, 0.02)
+        );
+        border-radius: 14px;
+        padding: 34px 22px;
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(6, 0, 92, 0.06);
+        margin-bottom: 26px;
+      }
+      .hero .name {
+        font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+        margin: 0 0 6px;
+        color: var(--main-dark);
+        font-weight: 700;
+        letter-spacing: -0.4px;
+      }
+      .hero h2 {
+        margin: 6px 0 8px;
+        font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+        color: var(--main);
+        font-weight: 700;
+      }
+      .hero p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        max-width: 820px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-    /* grid */
-    .cert-list{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:22px;
-      margin-bottom:28px;
-    }
-    @media(min-width:768px){
-      .cert-list{grid-template-columns:1fr 1fr;gap:26px}
-    }
+      /* grid */
+      .cert-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        margin-bottom: 28px;
+      }
+      @media (min-width: 768px) {
+        .cert-list {
+          grid-template-columns: 1fr 1fr;
+          gap: 26px;
+        }
+      }
 
-    .cert-item{
-      position:relative;
-      background:var(--card-bg);
-      border-radius:12px;
-      overflow:hidden;
-      padding:14px;
-      box-shadow:0 6px 24px rgba(6,0,92,0.08);
-      transition:transform .28s ease,box-shadow .28s ease;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .cert-item:hover{
-      transform:translateY(-6px) scale(1.01);
-      box-shadow:0 14px 44px rgba(6,0,92,0.14);
-    }
+      .cert-item {
+        position: relative;
+        background: var(--card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        padding: 14px;
+        box-shadow: 0 6px 24px rgba(6, 0, 92, 0.08);
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .cert-item:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 14px 44px rgba(6, 0, 92, 0.14);
+      }
 
-    .media{
-      position:relative;
-      width:100%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:6px;
-    }
-    .media img{
-      width:80vw;
-      max-width:860px;
-      height:auto;
-      display:block;
-      border-radius:10px;
-      object-fit:contain;
-      box-shadow:0 6px 22px rgba(6,0,92,0.07);
-      transition:transform .45s ease;
-    }
-    @media(min-width:768px){
-      .media img{width:calc(100% - 4px)}
-    }
-    .cert-item:hover .media img{transform:scale(1.03)}
+      .media {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+      }
+      .media img {
+        width: 80vw;
+        max-width: 860px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        object-fit: contain;
+        box-shadow: 0 6px 22px rgba(6, 0, 92, 0.07);
+        transition: transform 0.45s ease;
+      }
+      @media (min-width: 768px) {
+        .media img {
+          width: calc(100% - 4px);
+        }
+      }
+      .cert-item:hover .media img {
+        transform: scale(1.03);
+      }
 
-    /* overlay */
-    .overlay{
-      position:absolute;
-      left:8px;
-      right:8px;
-      bottom:8px;
-      padding:10px 12px;
-      border-radius:8px;
-      background:linear-gradient(180deg,rgba(6,0,92,0.96),rgba(6,0,92,0.65));
-      color:#fff;
-      font-weight:600;
-      text-align:center;
-      transform:translateY(14px);
-      opacity:0;
-      transition:all .32s cubic-bezier(.2,.9,.2,1);
-      pointer-events:none;
-      font-size:.98rem;
-      box-shadow:0 8px 26px rgba(6,0,92,0.22);
-    }
-    .cert-item:hover .overlay{
-      transform:translateY(0);
-      opacity:1;
-      pointer-events:auto;
-    }
+      /* overlay */
+      .overlay {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: linear-gradient(
+          180deg,
+          rgba(6, 0, 92, 0.96),
+          rgba(6, 0, 92, 0.65)
+        );
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        transform: translateY(14px);
+        opacity: 0;
+        transition: all 0.32s cubic-bezier(0.2, 0.9, 0.2, 1);
+        pointer-events: none;
+        font-size: 0.98rem;
+        box-shadow: 0 8px 26px rgba(6, 0, 92, 0.22);
+      }
+      .cert-item:hover .overlay {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
 
-    /* mobile: overlay hidden, caption shown */
-    @media(hover:none),(pointer:coarse){
-      .overlay{display:none}
-      .caption{display:block}
-    }
+      /* mobile: overlay hidden, caption shown */
+      @media (hover: none), (pointer: coarse) {
+        .overlay {
+          display: none;
+        }
+        .caption {
+          display: block;
+        }
+      }
 
-    .caption{
-      margin-top:12px;
-      font-weight:600;
-      color:var(--muted);
-      display:none;
-    }
+      .caption {
+        margin-top: 12px;
+        font-weight: 600;
+        color: var(--muted);
+        display: none;
+      }
 
-    /* actions */
-    .actions{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:6px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 18px;
-      font-weight:600;
-      border-radius:10px;
-      text-decoration:none;
-      color:#fff;
-      background:linear-gradient(135deg,var(--main),var(--main-light));
-      box-shadow:0 10px 30px rgba(6,0,92,0.12);
-      transition:transform .18s ease,box-shadow .18s ease;
-    }
-    .btn:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(6,0,92,0.18)}
-    .btn.secondary{
-      background:transparent;
-      color:var(--main-dark);
-      border:1px solid rgba(6,0,92,0.08);
-      box-shadow:none;
-    }
-    .btn.secondary:hover{
-      background:rgba(6,0,92,0.04);
-      color:var(--main);
-      box-shadow:0 8px 20px rgba(6,0,92,0.06);
-    }
+      /* actions */
+      .actions {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 6px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 18px;
+        font-weight: 600;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(135deg, var(--main), var(--main-light));
+        box-shadow: 0 10px 30px rgba(6, 0, 92, 0.12);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 44px rgba(6, 0, 92, 0.18);
+      }
+      .btn.secondary {
+        background: transparent;
+        color: var(--main-dark);
+        border: 1px solid rgba(6, 0, 92, 0.08);
+        box-shadow: none;
+      }
+      .btn.secondary:hover {
+        background: rgba(6, 0, 92, 0.04);
+        color: var(--main);
+        box-shadow: 0 8px 20px rgba(6, 0, 92, 0.06);
+      }
 
-    footer.site-foot{
-      margin-top:28px;
-      background:linear-gradient(90deg,var(--main),var(--main-dark));
-      color:#fff;
-      padding:16px 18px;
-      border-radius:10px;
-      text-align:center;
-      font-weight:600;
-      box-shadow:0 8px 30px rgba(6,0,92,0.08);
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
+      footer.site-foot {
+        margin-top: 28px;
+        background: linear-gradient(90deg, var(--main), var(--main-dark));
+        color: #fff;
+        padding: 16px 18px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 600;
+        box-shadow: 0 8px 30px rgba(6, 0, 92, 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="logo">Y</div>
+          <div>
+            <h4>Yunus Muheez</h4>
+            <div
+              style="color: var(--muted); font-size: 0.85rem; margin-top: 2px"
+            >
+              Certificates & Portfolio
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="#hero">About</a>
+          <a href="#certificates">Certificates</a>
+        </nav>
+      </header>
 
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">Y</div>
+      <section id="hero" class="hero">
         <div>
-          <h4>Yunus Muheez</h4>
-          <div style="color:var(--muted);font-size:0.85rem;margin-top:2px">Certificates & Portfolio</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#hero">About</a>
-        <a href="#certificates">Certificates</a>
-      </nav>
-    </header>
-
-    <section id="hero" class="hero">
-      <div>
-        <div class="name">Yunus Muheez</div>
-        <h2>My Professional Journey</h2>
-        <p>A collection of my certifications and qualifications.</p>
-      </div>
-    </section>
-
-    <main>
-      <section id="certificates">
-        <div class="cert-list" id="certList">
-                
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="static/Academic Resume.pdf" download>Download Resume</a>
-          <a class="btn secondary" href="static/Yunus Muheez O recommendation Letter.pdf" download>Recommendation Letter</a>
+          <div class="name">Yunus Muheez</div>
+          <h2>My Professional Journey</h2>
+          <p>A collection of my certifications and qualifications.</p>
         </div>
       </section>
-    </main>
 
-    <footer class="site-foot">
-      Contact: muheezyunus124@gmail.com | 09025241756 | 07077774840
-    </footer>
-  </div>
+      <main>
+        <section id="certificates">
+          <div class="cert-list" id="certList"></div>
 
-<script>
-const certImages = [
-  { file: 'CCNA1.png', web: 'CCNA1.webp', label: 'CCNA Certificate 1' },
-  { file: 'CCNA2.png', web: 'CCNA2.webp', label: 'CCNA Certificate 2' },
-  { file: 'HCIA.PNG', web: 'HCIA.webp', label: 'HCIA Certificate' },
-  { file: 'IMG_20250721_095356_273.png', web: 'IMG_20250721_095356_273.webp', label: 'Certificate Photo 1' },
-  { file: 'IMG_20250806_071940_193.png', web: 'IMG_20250806_071940_193.webp', label: 'Certificate Photo 2' },
-  { file: 'U-INSPIRE-CERT.png', web: 'U-INSPIRE-CERT.webp', label: 'U-INSPIRE Certificate' },
-  { file: 'Recommendation.png', web: 'Recommendation.webp', label: 'Recommendation Certificate' }
-];
+          <div class="actions">
+            <!-- <a class="btn" href="static/Academic Resume.pdf" download>Download Resume</a> -->
+            <a
+              class="btn secondary"
+              href="static/Yunus Muheez O recommendation Letter.pdf"
+              download
+              >Recommendation Letter</a
+            >
+          </div>
+        </section>
+      </main>
 
-const list = document.getElementById('certList');
+      <footer class="site-foot">
+        Contact: muheezyunus124@gmail.com | 09025241756 | 07077774840
+      </footer>
+    </div>
 
-certImages.forEach(cert => {
-  const item = document.createElement('article');
-  item.className = 'cert-item';
-  item.innerHTML = `
+    <script>
+      const certImages = [
+        { file: "CCNA1.png", web: "CCNA1.webp", label: "CCNA Certificate 1" },
+        { file: "CCNA2.png", web: "CCNA2.webp", label: "CCNA Certificate 2" },
+        {
+          file: "Recommendation.png",
+          web: "Recommendation.webp",
+          label: "Recommendation Certificate",
+        },
+        {
+          file: "IMG_20250721_095356_273.png",
+          web: "IMG_20250721_095356_273.webp",
+          label: "Certificate Photo 1",
+        },
+        {
+          file: "IMG_20250806_071940_193.png",
+          web: "IMG_20250806_071940_193.webp",
+          label: "Certificate Photo 2",
+        },
+        {
+          file: "U-INSPIRE-CERT.png",
+          web: "U-INSPIRE-CERT.webp",
+          label: "U-INSPIRE Certificate",
+        },
+        { file: "HCIA.PNG", web: "HCIA.webp", label: "HCIA Certificate" },
+      ];
+
+      const list = document.getElementById("certList");
+
+      certImages.forEach((cert) => {
+        const item = document.createElement("article");
+        item.className = "cert-item";
+        item.innerHTML = `
     <div class="media">
       <picture>
         <source srcset="static/images/${cert.web}" type="image/webp">
@@ -327,9 +386,8 @@ certImages.forEach(cert => {
     </div>
     <div class="caption">${cert.label}</div>
   `;
-  list.appendChild(item);
-});
-</script>
-
-</body>
+        list.appendChild(item);
+      });
+    </script>
+  </body>
 </html>
